@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css">
+    <title>Inteligencia Artificial</title>
+</head>
+<body>
+    <center>
+    <h1>Inteligencia Artificial</h1>
+    <hr>
+    <h3>Función setup</h3>
+    <textarea cols='80' rows='4' id="codigo">
+        classifier = ml5.imageClassifier("DoodleNet", modelReady);
+  resultsDiv = createDiv("Esperando predicción");
+}
+
+function modelReady(){
+  console.log("modelo cargado");
+  classifier. classify(canvas, gotResults);
+}
+
+function gotResults(error, results){
+  if(error){
+    console.log(error);
+    return;
+  }
+        
+        </textarea><br>
+        <button type="button" id="copyClip" data-clipboard-target="#codigo">Copiar</button>
+        <script src="clipboard.min.js"></script>
+
+    <br><br>
+    <hr>
+    <h3>Console log</h3>
+    <textarea cols='80' rows='4' id="codigo2">
+        var label = `${results[0].label}
+        ${nf(100*results[0].confidence, 2, 1)}%<br/>
+        ${results[1].label}
+        ${nf(100*results[1].confidence, 2, 1)}%`;
+
+resultsDiv.html(label);
+classifier. classify(canvas, gotResults);
+}
+          
+        </textarea><br>
+        <button type="button" id="bt1" class="bt1" data-clipboard-target="#codigo2">Copiar</button>
+        <script>
+
+   
+    var clipboard2 = new Clipboard('.bt1');
+    </script>
+    </center>
+    
+</body>
+</html>
